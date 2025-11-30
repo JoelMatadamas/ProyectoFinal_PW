@@ -16,7 +16,7 @@ Route::post('/', function () {
 
     // Simulación para entrar
     if ($num_control === "12345" && $password === "admin") {
-        return redirect()->route('dashboard');  // ← ESTA ES CORRECTA
+        return redirect()->route('alumno.dashboard');  // ← ESTA ES CORRECTA
     }
 
     return back()->with('error', 'Usuario o contraseña incorrectos');
@@ -31,21 +31,25 @@ Route::prefix('portal')->group(function () {
 });
 
 Route::get('/portal/equipo', function () {
-    return view('equipos'); // o 'portal.equipo' si está en carpeta
-})->name('equipos');
+    return view('alumno.equipos'); 
+})->name('alumnoequipos');
 
 Route::get('/equipo/id', function () {
-    return view('teams.show');
+    return view('alumno.teams.show');
 })->name('teams.show');
 
 Route::get('/eventos', function () {
-    return view('eventos');
-})->name('eventos');
+    return view('alumno.eventos');
+})->name('alumnoeventos');
 
 Route::get('/mis-proyectos', function () {
-    return view('proyectos');
-})->name('proyectos');
+    return view('alumno.proyectos');
+})->name('alumnoproyectos');
 
 Route::get('/constancias', function () {
-    return view('constancias');
-})->name('constancias');
+    return view('alumno.constancias');
+})->name('alumnoconstancias');
+
+Route::get('/eventos/id', function () {
+    return view('alumno.eventos.show');
+})->name('eventos.show');

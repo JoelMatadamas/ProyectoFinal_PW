@@ -393,7 +393,7 @@
 
      
 
-        /* ====================== VISTA EQUIPOS - FILA HORIZONTAL ====================== */
+        /* ====================== VISTA EQUIPOS  ====================== */
 .equipos-container {
     padding: 20px;
     display: block;
@@ -807,7 +807,7 @@
 
 /* ====================== EVENTOS ====================== */
 .eventos-container {
-    padding: 40px 20px;
+    padding: 0px 0px;
     max-width: 1500px;
     margin: 0 auto;
 }
@@ -850,6 +850,7 @@
     background: #fdf8f5;
     box-shadow: 12px 12px 30px #d9d0c8, -12px -12px 30px #ffffff;
     transition: all 0.4s ease;
+    cursor: pointer;
 }
 .evento-card:hover {
     transform: translateY(-15px);
@@ -959,6 +960,28 @@
     font-size: 1rem;
     line-height: 1.6;
     margin: 0;
+}
+
+/* Hace que toda la tarjeta sea clickeable y con efecto */
+.evento-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-link:hover .evento-card {
+    transform: translateY(-12px);
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.15) !important;
+}
+
+.evento-link:hover .evento-titulo-tira h3 {
+    color: #fff;
+}
+
+/* Opcional: efecto sutil de escala */
+.evento-link:active .evento-card {
+    transform: translateY(-8px) scale(0.98);
 }
 
 /* Responsive */
@@ -1431,6 +1454,262 @@
 
 
 
+
+/* ====================== DETALLE DE EVENTO ====================== */
+.evento-detalle-container {
+    padding: 50px 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #fdf8f5, #f5ece4);
+    min-height: 100vh;
+    display: block;
+    grid-column: 1 / -1;
+}
+
+.evento-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 70px;
+    align-items: start;
+}
+
+/* Tarjeta con logo del evento */
+.evento-imagen-card {
+    border-radius: 40px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    background: white;
+    box-shadow: 18px 18px 40px #e0d8d0, -18px -18px 40px #ffffff;
+}
+
+.evento-logo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.evento-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #eb8f3e;
+    color: white;
+    padding: 14px 50px;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(235, 143, 62, 0.4);
+}
+
+/* Descripción */
+.evento-descripcion-card {
+    border-radius: 35px;
+    padding: 40px;
+    background: white;
+    box-shadow: 18px 18px 40px #e0d8d0, -18px -18px 40px #ffffff;
+    height: 335px;
+}
+
+.evento-descripcion-card h3 {
+    font-size: 1.8rem;
+    margin: 0 0 25px 0;
+    color: #333;
+    font-weight: 700;
+}
+
+.evento-titulo-evento {
+    background: #eb8f3e;
+    color: white;
+    padding: 16px 30px;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.evento-descripcion-texto {
+    background: #fdf8f5;
+    padding: 30px;
+    border-radius: 28px;
+    font-size: 1.2rem;
+    color: #777;
+    line-height: 1.7;
+    box-shadow: 0px 4px 4px rgba(27, 27, 27, 0.25); 
+    height: 45%;
+}
+
+/* Grid inferior */
+.evento-inferior-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+/* Bases */
+.evento-bases {
+    border-radius: 35px;
+    padding: 40px;
+    background: white;
+    box-shadow: 18px 18px 40px #e0d8d0, -18px -18px 40px #ffffff;
+}
+
+.evento-bases h3 {
+    font-size: 1.8rem;
+    margin: 0 0 25px 0;
+    color: #333;
+    font-weight: 700;
+}
+
+.bases-titulo {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.bases-contenido {
+    background: #fdf8f5;
+    padding: 30px;
+    border-radius: 28px;
+    font-size: 1.2rem;
+    color: #777;
+    line-height: 1.7;
+    min-height: 180px;
+    box-shadow: 0px 4px 4px rgba(27, 27, 27, 0.25); 
+}
+
+/* Solicitar unirse */
+.evento-unirse {
+    border-radius: 35px;
+    padding: 40px;
+    background: white;
+    text-align: center;
+    box-shadow: 18px 18px 40px #e0d8d0, -18px -18px 40px #ffffff;
+}
+
+.evento-unirse h3 {
+    font-size: 1.8rem;
+    margin: 0 0 30px 0;
+    color: #333;
+    font-weight: 700;
+}
+
+.unirse-select-wrapper {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.unirse-select {
+    width: 100%;
+    padding: 20px 28px;
+    font-size: 1.3rem;
+    background: #fdf8f5;
+    border: none;
+    border-radius: 28px;
+    color: #888;
+    box-shadow: 0px 4px 4px rgba(27, 27, 27, 0.25); 
+    cursor: pointer;
+    appearance: none;
+}
+
+.unirse-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(235, 143, 62, 0.3);
+    color: #333;
+}
+
+.unirse-select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    color: #ccc;
+    pointer-events: none;
+}
+
+.btn-unirse {
+    width: 100%;
+    background: #eb8f3e;
+    color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 35px;
+    font-size: 1.6rem;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 10px 10px 30px rgba(235, 143, 62, 0.5);
+    transition: all 0.3s;
+}
+
+.btn-unirse:hover {
+    background: #d35400;
+    transform: translateY(-5px);
+}
+
+/* Footer: Fecha + Próximo */
+.evento-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.fecha-badge {
+    background: #fdf0e0;
+    color: #e67e22;
+    padding: 16px 40px;
+    border-radius: 40px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    box-shadow: 8px 8px 20px #f0e9e0, -8px -8px 20px #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.fecha-badge i {
+    font-size: 1.6rem;
+}
+
+.btn-proximo {
+    background: #00d4ff;
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 10px 10px 30px rgba(0, 212, 255, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+}
+
+.btn-proximo:hover {
+    background: #00b4db;
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .evento-hero, .evento-inferior-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .evento-footer {
+        flex-direction: column;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -1450,10 +1729,10 @@
 
         <ul class="sidebar-links">
             <li><a href="{{ route('dashboard') }}" class="active-link"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="{{ route('equipos') }}"><i class="fas fa-users"></i> Equipo</a></li>
-            <li><a href="{{ route('eventos') }}"><i class="far fa-calendar-alt"></i> Eventos</a></li>
-            <li><a href="{{ route('proyectos') }}"><i class="fas fa-flask"></i> Proyectos</a></li>
-            <li><a href="{{ route('constancias') }}"><i class="fas fa-file-alt"></i> Constancias</a></li>
+            <li><a href="{{ route('alumnoequipos') }}"><i class="fas fa-users"></i> Equipo</a></li>
+            <li><a href="{{ route('alumnoeventos') }}"><i class="far fa-calendar-alt"></i> Eventos</a></li>
+            <li><a href="{{ route('alumnoproyectos') }}"><i class="fas fa-flask"></i> Proyectos</a></li>
+            <li><a href="{{ route('alumnoconstancias') }}"><i class="fas fa-file-alt"></i> Constancias</a></li>
         </ul>
 
         <a href="{{ route('login') }}" class="logout-btn">

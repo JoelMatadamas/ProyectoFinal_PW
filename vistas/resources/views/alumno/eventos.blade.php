@@ -11,6 +11,7 @@
         <div class="eventos-row">
 
             <!-- Evento en curso -->
+            <a href="{{ route('eventos.show') }}" class="evento-link">
             <div class="evento-card en-curso neu-card">
                 <div class="evento-image">
                     <img src="{{ asset('images/innovaTecNM.jpg') }}" alt="Evento">
@@ -23,8 +24,10 @@
                     <p>Pequeña descripción de el evento</p>
                 </div>
             </div>
+            </a>
 
             <!-- Repetir para más eventos en curso -->
+            <a href="{{ route('eventos.show') }}" class="evento-link">
             <div class="evento-card en-curso neu-card">
                 <div class="evento-image">
                     <img src="{{ asset('images/innovaTecNM.jpg') }}" alt="Evento">
@@ -37,7 +40,9 @@
                     <p>Pequeña descripción de el evento</p>
                 </div>
             </div>
+            </a>
 
+            <a href="{{ route('eventos.show') }}" class="evento-link">
             <div class="evento-card en-curso neu-card">
                 <div class="evento-image">
                     <img src="{{ asset('images/innovaTecNM.jpg') }}" alt="Evento">
@@ -50,6 +55,7 @@
                     <p>Pequeña descripción de el evento</p>
                 </div>
             </div>
+            </a>
 
         </div>
     </div>
